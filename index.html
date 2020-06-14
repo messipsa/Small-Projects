@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width , initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        
+        <title>Daily Program</title>
+    </head>
+    <body>
+        <div class="container"> <!--le margin du cadre-->
+            <div class="row">
+                <div class="col s12">
+                    <div id="main" class="card"> <!--le cadre-->
+                        <div class="card-content"> <!--margin-->
+                            <div class="card-title">Daily Program <!--Padding-->
+                            <div class="row">
+                                <form id="task-form">
+                                    <div class="input-field col s12">
+                                           <input type="text" name="task">
+                                           <label for="task">Task</label>
+                                    </div>
+                                    <div class="input-field col s12">
+                                           <input type="text" name="task">
+                                           <label for="task">Time</label>
+                                    </div>
+                                    <input type="submit" value="ADD new task" class="btn" style="background-color: rgb(30, 235, 98);">
+                                </form>
+                                <div class="card-action">
+                                    <h5 id="task-title">Tasks</h5>
+                                   
+                            </div>
+                                <div class="input-field col s12">
+                                    <input type="text" name="filter">
+                                    <label for="task">Daily Program</label>
+                                    <ul class="collection">
+                                        <a href="#" class="clear-tasks btn">Clear Tasks</a>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                        
+                            
+                        </div>
+                        
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+      
+        <script
+        src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+        crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <script src="app.js"></script>  
+    </body>
+</html>
