@@ -30,10 +30,6 @@ function gettasks()
   }
   taches.forEach(function(t)
   {
-    //const t = (JSON.stringify(taskk));
-    console.log(typeof(t) + typeof(t.task));
-    console.log(t + t['task'] + t.debut + t[0].task);
-    console.log(t.txt);
     const li = document.createElement('li');
   li.className='collection-item';
   if(t.debut!='' && t.fin!='')
@@ -78,7 +74,6 @@ function addTask (e)
       
   const li = document.createElement('li');
   li.className='collection-item';
- 
   if(temps.value!='' && fin.value!='')
   {
   li.appendChild(document.createTextNode(temps.value+' --> ' +fin.value+' : ' +taskin.value ));
@@ -126,19 +121,20 @@ function storeLS(Task,Begin,End)
   {
     taches = JSON.parse(localStorage.getItem('taches'));
   }
-  let object = {task : Task , 
+  let object = {"task" : Task , 
   debut : Begin,
 fin : End};
+console.log("sah raw hna       " + object.task +object.debut);
 console.log(Task + Begin + End);
 console.log(taches +' '+JSON.stringify(object));
-  taches.push(JSON.stringify(object));
+  taches.push((object));
     console.log(taches);
     localStorage.setItem('taches',JSON.stringify(taches));
 }
 
 function suppression(e)
 {
-  console.log(e.target);
+  console.log(e.target.parentElement.parentElement.textContent);
   if(e.target.className=="fa fa-remove" && confirm('Are you sure?'))
   {
   e.target.parentElement.parentElement.remove();
