@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <title>Currency Converter</title>
+  </head>
+  <body class="bg-dark"> <!--Dark background-->
+    <div class="container"><!--Moves items to the middle-->
+        <div class="row">
+            <div class="col-md-6 mx-auto">
+               <div class="card card-body text-center mt-5">
+                   <h1 class="heading display-5 pb-3">Currency Converter</h1>
+                      
+                  
+                   <form id="drahem">
+                    <div class="form-group">
+                        <div class="input-group">
+                        <span class="input-group-text">§</span>
+                     <input list="or" name="" class=" form-control" id="somme" placeholder="The currency to convert from">
+                     <datalist id="or">
+                        <option value="Euro">
+                        <option value="Dollar">
+                        <option value="Dinar">
+                      </datalist>
+                 </div>
+                    </div>
+                </form>
+                <form id="money">
+                    <div class="form-group">
+                        <div class="input-group">
+                        <span class="input-group-text">§</span>
+                     <input list="argent" name="" class=" form-control" id="sum" placeholder="The currency to convert to">
+                     <datalist id="argent">
+                        <option value="Euro">
+                        <option value="Dollar">
+                        <option value="Dinar">
+                      </datalist>
+                 </div>
+                    </div>
+                </form>
+
+                    <form id="currency">
+                        <div class="form-group">
+                            <div class="input-group">
+                            <span class="input-group-text">$</span>
+                         <input type="number" name="" class=" form-control" id="money" placeholder="Amount to convert">
+                     </div>
+                        </div>
+                    
+                </form>
+                <button type="button" class="btn btn-primary btn-lg">Convert</button>
+               <!-- <div id="loadd">
+                    <img src="img/loading.gif" alt="#">
+                </div>-->
+                <div class="pt-3">
+                   <h4>Results :</h4>
+                      <div class="form-group">
+                            <div class="input-group">
+                            <span class="input-group-text">Result of conversion</span>
+                         <input type="number" name="" class=" form-control" id="results"
+                         disabled>
+                     </div>
+                        </div>
+                    </div>
+               </div>
+            </div>
+            
+        </div>
+    
+    </div>
+   
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <script src="cal.js"></script>
+</body>
+</html>
