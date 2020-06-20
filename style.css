@@ -6,3 +6,19 @@
 {
     display: none;
 }
+.succes
+{
+    color : white;
+    padding : 5px;
+    margin-top: 5px;
+    margin-bottom: 15px ;
+    background-color: green;
+}
+.error
+{
+    color : white;
+    padding : 5px;
+    margin-top: 5px;
+    margin-bottom: 15px ;
+    background-color: red;
+}
