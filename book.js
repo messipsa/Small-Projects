@@ -22,9 +22,6 @@ class Book
        const nouveau = document.createElement('tr');
        console.log(nouveau);
        const ne = document.createElement('th');
-      /* nouveau.appendChild(document.createTextNode(book.title));
-       nouveau.appendChild(document.createTextNode(book.author));
-       nouveau.appendChild(document.createTextNode(book.parution));*/
        nouveau.innerHTML = `<th>${book.title}</th>
        <th>${book.author}</th>
        <th>${book.parution}</th>
@@ -37,19 +34,52 @@ class Book
        
      }
 
-     Delete_book()
+     Delete_book(target)
      {
-
+           const t = target;
+           t.parentElement.parentElement.remove();
      }
 
-     Show_Alert()
+     Show_Alert(text)
      {
-
+        if(text=='error')
+        {
+            const divv = document.querySelector('.container');
+            const form = document.querySelector('#frm');
+            const nuevo = document.createElement('div');
+            const hone = document.createElement('h1');
+            nuevo.className='alert error';
+            nuevo.appendChild(document.createTextNode('Please fill in all fields'));
+            divv.insertBefore(nuevo,form);
+            setTimeout(Effacer,3000);
+        }
+        else
+        {
+            const divv = document.querySelector('.container');
+            const form = document.querySelector('#frm');
+            const nuevo = document.createElement('div');
+            const hone = document.createElement('h1');
+            nuevo.className='alert succes';
+            if(text=='succes')
+            {
+            nuevo.appendChild(document.createTextNode('Book added '));
+            }
+            else
+            {
+                nuevo.appendChild(document.createTextNode('Book removed '));
+            }
+            divv.insertBefore(nuevo,form);
+            setTimeout(function()
+            {
+                document.querySelector('.succes').remove();
+            },3000);
+        }
      }
  }
- document.querySelector('.button-primary').addEventListener('click',takeit);
+ document.querySelector('.button-primary').addEventListener('click',adding);
+
  
-function takeit(e)
+function adding(e)
 {
     const aut = document.querySelector('#auteur').value;
  const time = document.querySelector('#date').value;
@@ -57,6 +87,30 @@ function takeit(e)
  const livre = new Book(ttr,aut,time);
  const comp = new UI();
  console.log(comp);
+  if(ttr==''||time==''||aut=='')
+  {
+      comp.Show_Alert('error');
+  }
+  else{
    comp.Add_Book(livre);
+   comp.Show_Alert('succes');
+  }
+    e.preventDefault();
+}
+
+function Effacer()
+{
+    document.querySelector('.error').remove();
+}
+
+document.querySelector('#liste').addEventListener('click',deleting);
+function deleting(e)
+{
+    if(e.target.className=='delete')
+    {
+        const comp = new UI();
+        comp.Delete_book(e.target);
+        comp.Show_Alert('removed');
+    }
     e.preventDefault();
 }
