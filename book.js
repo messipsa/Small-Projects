@@ -76,6 +76,64 @@ class Book
         }
      }
  }
+
+ class Local
+ {
+     
+    static getbooks()
+    {
+       let books = [];
+      if(localStorage.getItem('books')==null)
+      {
+          books = [];
+      }
+      else
+      {
+          books = JSON.parse(localStorage.getItem('books'));
+      }
+      return books;
+    }
+
+    static affichage()
+    {
+       let books = Local.getbooks();
+       books.forEach(function(book)
+       {
+           const cmp = new UI();
+           cmp.Add_Book(book);
+       })
+
+    }
+
+
+     static addbook(book)
+     {
+       let books = Local.getbooks();
+       console.log(books);
+       const livre = new Book(book.title,book.author,book.parution);
+       books.push(livre);
+       console.log(books);
+       localStorage.setItem('books',JSON.stringify(books));
+     }
+
+     
+     static removebook(Isbn)
+     {
+        let books = Local.getbooks();
+        books.forEach(function(book,index)
+        {
+            const cmp = new UI();
+            if(book.parution==Isbn)
+           {
+               books.splice(index,1);
+           }
+            
+        })
+        localStorage.setItem('books',JSON.stringify(books));
+     }
+ }
+
+ document.addEventListener('DOMContentLoaded',Local.affichage);
  document.querySelector('.button-primary').addEventListener('click',adding);
 
  
@@ -93,6 +151,7 @@ function adding(e)
   }
   else{
    comp.Add_Book(livre);
+   Local.addbook(livre);
    comp.Show_Alert('succes');
   }
     e.preventDefault();
@@ -110,6 +169,8 @@ function deleting(e)
     {
         const comp = new UI();
         comp.Delete_book(e.target);
+        console.log(e.target.parentElement.previousElementSibling.textContent);
+        Local.removebook(e.target.parentElement.previousElementSibling.textContent);
         comp.Show_Alert('removed');
     }
     e.preventDefault();

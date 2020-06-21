@@ -10,7 +10,7 @@ console.log(taskin.value);
 addEventListeners();
 function addEventListeners(e)
 {
-  document.addEventListener('DOMContentLoaded',gettasks)
+  document.addEventListener('DOMContentLoaded',gettasks);
     form.addEventListener('submit',addTask);
     liste.addEventListener('click',suppression);
      boutton.addEventListener('click',lavage);
